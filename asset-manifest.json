@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/js-smaller-img/static/css/main.b100e6da.chunk.css",
+    "main.css": "/js-smaller-img/static/css/main.c28c57db.chunk.css",
     "main.js": "/js-smaller-img/static/js/main.7a967fe8.chunk.js",
     "main.js.map": "/js-smaller-img/static/js/main.7a967fe8.chunk.js.map",
     "runtime-main.js": "/js-smaller-img/static/js/runtime-main.9d77f763.js",
@@ -8,14 +8,14 @@
     "static/js/2.105c4b99.chunk.js": "/js-smaller-img/static/js/2.105c4b99.chunk.js",
     "static/js/2.105c4b99.chunk.js.map": "/js-smaller-img/static/js/2.105c4b99.chunk.js.map",
     "index.html": "/js-smaller-img/index.html",
-    "precache-manifest.f6ea1152dbeeada20b91472c9a1744bc.js": "/js-smaller-img/precache-manifest.f6ea1152dbeeada20b91472c9a1744bc.js",
+    "precache-manifest.71e464d938daccf36a463a99ba00d686.js": "/js-smaller-img/precache-manifest.71e464d938daccf36a463a99ba00d686.js",
     "service-worker.js": "/js-smaller-img/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/js-smaller-img/static/css/main.b100e6da.chunk.css.map"
+    "static/css/main.c28c57db.chunk.css.map": "/js-smaller-img/static/css/main.c28c57db.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.9d77f763.js",
     "static/js/2.105c4b99.chunk.js",
-    "static/css/main.b100e6da.chunk.css",
+    "static/css/main.c28c57db.chunk.css",
     "static/js/main.7a967fe8.chunk.js"
   ]
 }
