@@ -81,9 +81,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <input type="file" accept="image/*" onChange={this.handleImageUpload}/>
+          <input type="file" accept="image/*;capture=camera" onChange={this.handleImageUpload}/>
           <p>Original size: {this.state.originalImgSize}</p>
-          <p>Smaller size: {this.state.reducedImgSize}</p>
+          <p>New reduced size: {this.state.reducedImgSize}</p>
           <div className="Image-container">
             <img src={this.state.imageSrc} />
             <img src={this.state.smallerImgSrc} />
