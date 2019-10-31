@@ -20,3 +20,12 @@
 .App-link {
   color: #09d3ac;
 }
+
+.Image-container {
+    max-width: 100%;
+}
+
+.Image-container img {
+    width: 100%;
+    height: auto;
+}
