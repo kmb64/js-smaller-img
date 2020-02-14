@@ -24,70 +24,31 @@ class App extends React.Component {
   }
 
   reduceImage = (e) => {
-    this.setState({
-      originalImgSize: returnFileSize(e.total),
-      imageSrc: e.target.result
-    });
 
-    const img = new Image();
-    img.src = e.target.result;
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
+    console.log(e.target.result);
+    const arrayBuffer = e.target.result;
+    console.log(arrayBuffer);
+    console.log(new Uint8Array(arrayBuffer));
 
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0);
+    const base64String = btoa(new Uint8Array(arrayBuffer).reduce((data, byte) => data + String.fromCharCode(byte), ''));
 
-      const MAX_WIDTH = 800;
-      const MAX_HEIGHT = 600;
-      let width = img.width;
-      let height = img.height;
-
-      if (width > height) {
-        if (width > MAX_WIDTH) {
-          height *= MAX_WIDTH / width;
-          width = MAX_WIDTH;
-        }
-      } else {
-        if (height > MAX_HEIGHT) {
-          width *= MAX_HEIGHT / height;
-          height = MAX_HEIGHT;
-        }
-      }
-      canvas.width = width;
-      canvas.height = height;
-      ctx.drawImage(img, 0, 0, width, height);
-
-      const dataurl = canvas.toDataURL("image/*");
-      console.log(dataurl);
-
-      this.setState({
-        smallerImgSrc: dataurl,
-
-        // https://stackoverflow.com/a/18557601/1050479
-        reducedImgSize: returnFileSize(Math.round((dataurl.length - 'data:image/png;base64,'.length)*3/4))
-      })
-    };
-
+    console.log('base64String');
+    console.log(base64String);
   };
 
   handleImageUpload = async (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = this.reduceImage;
-    reader.readAsDataURL(file)
+    reader.readAsArrayBuffer(file)
   };
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          <p>IE11 test</p>
           <input type="file" accept="image/*;capture=camera" onChange={this.handleImageUpload}/>
-          <p>Original size: {this.state.originalImgSize}</p>
-          <p>New reduced size: {this.state.reducedImgSize}</p>
-          <div className="Image-container">
-            <img src={this.state.imageSrc} />
-            <img src={this.state.smallerImgSrc} />
-          </div>
         </header>
       </div>
     )
